@@ -1,0 +1,25 @@
+@font-face{
+    font-family: monos;
+    font-weight: regular;
+    src: url('../fonts/LXGWWenKaiMono-Regular.ttf');
+}
+@font-face{
+    font-family: monos;
+    font-weight: bold;
+    src: url('../fonts/LXGWWenKaiMono-Bold.ttf');
+}
+@font-face{
+    font-family: monos;
+    font-weight: light;
+    src: url('../fonts/LXGWWenKaiMono-Light.ttf');
+}
+
+body{
+    font-family: monos;
+    font-weight: bold;
+    color: white;
+    background-image: url('../images/sea.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

@@ -1,0 +1,15 @@
+@font-face{
+    font-family: monospace;
+    font-weight: regular;
+    src: url('../fonts/LXGWWenKaiMono-Regular.ttf');
+}
+@font-face{
+    font-family: monospace;
+    font-weight: bold;
+    src: url('../fonts/LXGWWenKaiMono-Bold.ttf');
+}
+@font-face{
+    font-family: monospace;
+    font-weight: light;
+    src: url('../fonts/LXGWWenKaiMono-Light.ttf');
+}

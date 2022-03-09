@@ -1,0 +1,47 @@
+@font-face {
+    font-family: hand;
+    font-weight: regular;
+    src: url('../fonts/LXGWWenKai-Regular.ttf');
+}
+@font-face {
+    font-family: hand;
+    font-weight: bold;
+    src: url('../fonts/LXGWWenKai-Bold.ttf');
+}
+@font-face{
+    font-family: hand;
+    font-weight: light;
+    src: url('../fonts/LXGWWenKai-Light.ttf');
+}
+
+h1{
+    color:white;
+}
+
+body{
+    font-family: hand;
+    font-weight: bold;
+}
+
+a:link, a:active{
+    color:yellow;
+}
+a:hover{
+    color:cadetblue;
+}
+
+p{
+    color:white;
+    text-align: center;
+}
+
+blockquote{
+    color:white;
+}
+
+text{
+    boder: 0px solid powderblue;
+    padding: 5px;
+    margin: 30px;
+    color:white;
+}

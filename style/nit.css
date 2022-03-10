@@ -18,8 +18,31 @@ body{
     font-family: monos;
     font-weight: bold;
     color: white;
-    background-image: url('../images/sea.png');
+    background-image: url('../images/star.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+ul{
+    list-style-type: disc;
+}
+
+.container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.code{
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    color: yellow;
+    background-color: rgba(255,255,255,0.2);
+    max-width: 60%;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 10px;
 }

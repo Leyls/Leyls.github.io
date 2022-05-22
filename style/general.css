@@ -1,25 +1,22 @@
-@font-face {
-    font-family: hand;
+@font-face{
+    font-family: display;
     font-weight: regular;
-    src: url('../fonts/LXGWWenKai-Regular.ttf');
-}
-@font-face {
-    font-family: hand;
-    font-weight: bold;
-    src: url('../fonts/LXGWWenKai-Bold.ttf');
+    src: url('../fonts/display.ttf');
 }
 @font-face{
-    font-family: hand;
-    font-weight: light;
-    src: url('../fonts/LXGWWenKai-Light.ttf');
+    font-family: mono_andale;
+    font-weight: regular;
+    src: url('../fonts/mono.ttf')
 }
 
 h1{
     color:white;
+    font-size: 24px;
 }
 
 body{
-    font-family: hand;
+    font-size: 17px;
+    font-family: mono_andale, display;
     font-weight: bold;
 }
 
@@ -31,6 +28,8 @@ a:hover{
 }
 
 p{
+    font-family: mono_andale;
+    font-size: 18px;
     color:white;
     text-align: center;
 }

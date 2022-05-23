@@ -2,63 +2,48 @@
 <html>
   <head>
   <link rel="stylesheet" href="../style/nit.css">
-  <title>KDE配置过程</title>
+  <title>Use Mips In Linux</title>
   </head>
   <body style="position:relative;">
-       仅仅个人配置遇到的坑，所以难免可能有错误。系统是 opensuse Leap 15.2. 因为系统用的人网上没找到太多，所以配置起来很
-麻烦，但是对于很多软件包一般 opensuse 都有自己对应的软件包，所以其实用起来还行。不过强烈建议系统等跟着大众走，就像java
-永不倒一样。配置环境这种事情很少有技术含量却很花费时间，能避免尽量避免。配置环境之前对所需求环境必须强烈明确细节，否则就会走很多
-不必要的路。时间 > everything。
-
-# 如何在 linux 环境中使用 mips 环境
-
-## 如何在 linux 环境中编译 mips 汇编语言
-环境要求：java运行环境，能执行jar，最好1.8及以上
-
-操作步骤：在文件列表中下载 mars.jar 文件，在终端运行
-~~~bash
-java -jar mars.jar
-~~~
-等待一段时间就可以看见界面的调试器。文件链接：http://courses.missouristate.edu/kenvollmar/mars/。
-这里仅利用java运行不依赖平台的特点，这个jar也能在windows和macos（未测试）上使用。
-
-## 如何在 linux 环境中编译 mips C/C++程序
-环境要求：暂且无
-
-操作步骤：
-首先尽量在自己系统的软件源内搜索mips或者其他相关关键字，对得到的软件搜索或者安装，各个发行版一般都有较好较完整的工具，直接安装
-就行。一般有两种方法：
-qemu系统模式实现整个mips系统的虚拟，安装编译器然后用qemu用户模式去执行得到的编译文件产生结果。
-
-### qemu系统模式实现整个mips系统虚拟
-此步骤需要下载qemu，一般名为
-~~~bash 
-qemu-system-...
-~~~
-之类，之后需要下载几个文件，可以从ustc镜像源下载（http://mirrors.ustc.edu.cn/debian/dists/stable/main/installer-mips/current/images/malta/netboot/）
-这两个必须文件，然后运行以下命令（https://blahcat.github.io/2017/07/14/building-a-debian-stretch-qemu-image-for-mipsel/）：
-~~~bash
-qemu-img create -f qcow2 disk.qcow2 20G # 20G比较大，自己设的5G
-qemu-system-mips -M malta -m 1G -hda ./disk.qcow2 -initrd ./initrd.gz 
-  / -kernel ./vmlinux-4.19.0-14-4kc-malta -append "nokaslr" \
+   <p class="has-line-data" data-line-start="0" data-line-end="4">仅仅个人配置遇到的坑，所以难免可能有错误。系统是 opensuse Leap 15.2. 因为系统用的人网上没找到太多，所以配置起来很麻烦，但是对于很多软件包一般 opensuse 都有自己对应的软件包，所以其实用起来还行。不过强烈建议系统等跟着大众走，就像 java 永不倒一样。配置环境这种事情很少有技术含量却很花费时间，能避免尽量避免。配置环境之前对所需求环境必须强烈明确细节，否则就会走很多
+不必要的路。时间 &gt; everything。</p>
+<h1 class="code-line" data-line-start=5 data-line-end=6><a id="_linux__mips__5"></a>如何在 linux 环境中使用 mips 环境</h1>
+<h2 class="code-line" data-line-start=7 data-line-end=8><a id="_linux__mips__7"></a>如何在 linux 环境中编译 mips 汇编语言</h2>
+<p class="has-line-data" data-line-start="8" data-line-end="9">环境要求:java 运行环境，能执行 jar，最好 1.8及以上</p>
+<p class="has-line-data" data-line-start="10" data-line-end="11">操作步骤:在文件列表中下载 mars.jar 文件，在终端运行</p>
+<pre class="container"><code class="code" data-line-start="12" data-line-end="14" class="language-bash">java -jar mars.jar
+</code></pre>
+<p class="has-line-data" data-line-start="14" data-line-end="16">等待一段时间就可以看见界面的调试器。 <a href="http://courses.missouristate.edu/kenvollmar/mars/">Download</a><br>
+这里仅利用 java 运行不依赖平台的特点，这个 jar 也能在 windows 和 macos 上使用。</p>
+<h2 class="code-line" data-line-start=17 data-line-end=18><a id="_linux__mips_CC_17"></a>如何在 linux 环境中编译 mips C/C++程序</h2>
+<p class="has-line-data" data-line-start="18" data-line-end="19">环境要求:暂且无</p>
+<p class="has-line-data" data-line-start="20" data-line-end="24">操作步骤:<br>
+首先尽量在自己系统的软件源内搜索mips或者其他相关关键字，对得到的软件搜索或者安装，各个发行版一般都有较好较完整的工具，直接安装<br>
+就行。一般有两种方法：<br>
+qemu系统模式实现整个mips系统的虚拟，安装编译器然后用qemu用户模式去执行得到的编译文件产生结果。</p>
+<h3 class="code-line" data-line-start=25 data-line-end=26><a id="qemumips_25"></a>qemu系统模式实现整个mips系统虚拟</h3>
+<p class="has-line-data" data-line-start="26" data-line-end="27">此步骤需要下载qemu，一般名为</p>
+<pre class="container"><code class="code" data-line-start="28" data-line-end="30" class="language-bash">qemu-system-...
+</code></pre>
+<p class="has-line-data" data-line-start="30" data-line-end="32">之类，之后需要下载几个文件，可以从ustc镜像源下载（<a href="http://mirrors.ustc.edu.cn/debian/dists/stable/main/installer-mips/current/images/malta/netboot">Download From USTC Mirror</a><br>
+这两个必须文件，然后运行以下命令（<a href="https://blahcat.github.io/2017/07/14/building-a-debian-stretch-qemu-image-for-mipsel/">Download from GitHub</a></p>
+<pre class="container"><code class="code" data-line-start="33" data-line-end="38" class="language-bash">qemu-img create <span class="hljs-operator">-f</span> qcow2 disk.qcow2 <span class="hljs-number">20</span>G <span class="hljs-comment"># 20G比较大，自己设的5G</span>
+qemu-system-mips -M malta -m <span class="hljs-number">1</span>G -hda ./disk.qcow2 -initrd ./initrd.gz 
+  / -kernel ./vmlinux-<span class="hljs-number">4.19</span>.<span class="hljs-number">0</span>-<span class="hljs-number">14</span>-<span class="hljs-number">4</span>kc-malta -append <span class="hljs-string">"nokaslr"</span> \
   -nographic
-~~~
-之后就到安装环节，域名和配置一般用默认，自己的是设空。最后要划磁盘空间怕不知道磁盘里面有什么就停止了下去。
-
-### qemu用户模式加交叉编译环境
-mips-suse-linux-gcc是自己的mips gcc编译器。编译过程十分崩溃，完整命令如下，最后还是有错误：
-~~~bash
-mips-suse-linux-gcc --sysroot=/usr -I/usr/include test.c -o test -L/usr/lib -lc -static
+</code></pre>
+<p class="has-line-data" data-line-start="38" data-line-end="39">之后就到安装环节，域名和配置一般用默认，自己的是设空。最后要划磁盘空间怕不知道磁盘里面有什么就停止了下去。</p>
+<h3 class="code-line" data-line-start=40 data-line-end=41><a id="qemu_40"></a>qemu用户模式加交叉编译环境</h3>
+<p class="has-line-data" data-line-start="41" data-line-end="42">mips-suse-linux-gcc是自己的mips gcc编译器。编译过程十分崩溃，完整命令如下，最后还是有错误：</p>
+<pre class="container"><code class="code" data-line-start="43" data-line-end="46" class="language-bash">mips-suse-linux-gcc --sysroot=/usr -I/usr/include test.c -o <span class="hljs-built_in">test</span> -L/usr/lib -lc -static
 error: crt1.o wrong file format
-~~~
-qemu用户模式一般是qemu-mips,qemu-riscv这类qemu-虚拟环境名形式, 如果编译成功，运行
-~~~bash
-qemu-mips test
-~~~
-即可出现结果，但是自己又出现一个错误
-~~~bash
-test: cant't allocate memory
-~~~
-所以就此作罢。
+</code></pre>
+<p class="has-line-data" data-line-start="46" data-line-end="47">qemu用户模式一般是qemu-mips,qemu-riscv这类qemu-虚拟环境名形式, 如果编译成功，运行</p>
+<pre class="container"><code class="code" data-line-start="48" data-line-end="50" class="language-bash">qemu-mips <span class="hljs-built_in">test</span>
+</code></pre>
+<p class="has-line-data" data-line-start="50" data-line-end="51">即可出现结果，但是自己又出现一个错误</p>
+<pre class="container"><code class="code" data-line-start="52" data-line-end="54" class="language-bash"><span class="hljs-built_in">test</span>: cant<span class="hljs-string">'t allocate memory
+</span></code></pre>
+<p class="has-line-data" data-line-start="54" data-line-end="55">所以就此作罢。</p>
   </body>
 </html>

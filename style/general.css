@@ -1,28 +1,36 @@
 @font-face{
     font-family: display;
     font-weight: regular;
-    src: url('../fonts/display.ttf');
+    src: url('../fonts/pingfang.ttf');
 }
 @font-face{
     font-family: mono_andale;
     font-weight: regular;
-    src: url('../fonts/mono.ttf')
+    src: url('../fonts/andale.ttf')
 }
 
 h1{
     color:white;
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.5;
 }
 
 body{
-    font-size: 17px;
+    font-size: 18px;
     font-family: mono_andale, display;
     font-weight: bold;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 a:link, a:active{
-    color:yellow;
+    color:khaki;
 }
+
+a:link, a:visited{
+    color: steelblue;
+}
+
 a:hover{
     color:cadetblue;
 }
@@ -39,8 +47,35 @@ blockquote{
 }
 
 text{
-    boder: 0px solid powderblue;
-    padding: 5px;
+    boder: 10px solid powderblue;
+    padding: 0px;
     margin: 30px;
     color:white;
+    line-height: 1.5;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -70px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: lightcyan;
+  background-color: rgba(200, 200, 200, 0.2);
+  padding: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

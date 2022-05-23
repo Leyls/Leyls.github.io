@@ -1,64 +1,167 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="../style/nit.css">
-  <title>KDE配置过程</title>
+    <link rel="stylesheet" href="../style/nit.css" />
+    <title>Use Masm In Linux</title>
   </head>
-  <body style="position:relative;">
-    # Steps to Do
-## install dosbox in your system
-use your own package manager command with sudo privilige to install dosbox like:
-
-**sudo zypper in dosbox**
-
-while **sudo** ask for sudo privilige which is required in most of the occasions. **zypper** is the package manager name for openSUSE(a linux version made by German). **in** means install for zypper and **dosbox** is the package name. Notice sometimes the package name is different from its usual software name so the best way before the installation of a package is to search the software's package name in different distributions. You can search it in any engines you like or use command like this:
-
-**sudo zypper search dosbox**
-
-It returns a chart including all packages whose name includes dosbox such as dosbox-sid and uninsdosboxoio-siodi.
-
-## run dosbox in your directory
-You could run dosbox by clicking its icon in the search bar or application bar but more efficiently you could directly type **dosbox** in the bash and the window will show up. Focus on the dosbox's command line, it may start with **Z:>**, or anything else. You may need to redirect the directory to somewhere on your computer to make dosbox be able to use files you made. Command is :
-
-**mount c ~/pathOne/pathTwo**
-
-Here c is the symbol. Best choice is c. ~/pathOne/pathTwo is the directory name. Here ~ represents /home/yourUserName. You could input absolute path too which is recommended.
-
-To use a new shell system, first type Help or HELP or anything else to ask for directions. You could learn some basic use in dosbox through doing so like dir to list all files and directories and cd to switch directories. Or you could search mannual or tutorials online for help.
-
-Now if you input the command above (**mount c ~/pathOne/pathTwo**) , you see nothing happened, if its **Z:>** before, it still didnt change. Du~de, we need one more step. Remember we use **c** after mount. We may type command below in the dosbox shell:
-
-**c:**
-
-and after this you would see the letter finally changed. dir it and you could see the files in your input directory be listed below.
-
-##  excute exe in dosbox
-Dosbox actually is a simulator for a specific environment which means the dosbox file system could be very different from your linux file system. For example .exe file can't directly be executed in linux while it can be done in dosbox. 
-
-We did set a path on our computer for dosbox to use earlier. The directory we set for dosbox is a platform where dosbox can read files and do its own stuff. Since .exe files can't be excuted by linux but can be executed in dosbox, we put .exe files in the directory we set for dosbox. And type the name of the .exe file, we can see it be run or executed in dosbox.
-
-## assembeler tools
-But we need dosbox just for enviroment simulation. What should we do if we need to assemble .asm files? 
-
-Well you could use nasm in linux which is recommended. Just install nasm using command we use to install dosbox above, don't need to search, the package name is nasm itself. 
-
-But some people would still need masm. If we need to assemble .asm in Intel 80 86 chips (8086,8088,80286,80386,80486 and pentium. These chips have some differences on the CPU registers' bits number and names. Further information may require an assembly language tutorial book) environment, we need masm to do this step. 
-
-What's masm? masm is a .exe file with a full name Microsoft Macro Assembler from where we can see why it's .exe file. How to use masm in linux? Like what we analyzed, we need to move masm.exe in the directory we set for dosbox, type masm and let dosbox execute the masm.exe file. 
-
-Well we did it! One more stuff is that assembling .asm files not only needs masm, but also needs many other tools which are all .exe files. We obey the same way we do for masm.exe. And the directory we set for dosbox can now be called as an assemble enviroment. If we wanna do any assembling work, make .asm files in pure text format in that directory and use tools(masm and etc) in the dosbox shell, we will get the result. The normal procedure to use these tools are: masm fileName, link fileName, fileName.
-
-For example we created and wrote sample.asm in the directory we set for dosbox. Now we do:
-
-**masm sample;**  make sample.obj file
-
-**link sample;** make sample.exe file through sample.obj 
-
-**sample** execute sample.exe like execute masm.exe by just typing masm
-
-We will see the result be displayed on the dosbox (0,0,0) screen with (255,255,255) frontface color. Notice ; at the end of masm and link command means jumping all other questions.
-
-## masm and other tools file
-Well now we need only the tools' files, of course .exe type. You can download them online using all the ways. Here are these tools provided in the tools folder.
+  <body style="position: relative">
+    <h1 class="code-line" data-line-start="0" data-line-end="1">
+      <a id="Steps_to_Do_0"></a>Steps to Do
+    </h1>
+    <h2 class="code-line" data-line-start="1" data-line-end="2">
+      <a id="install_dosbox_in_your_system_1"></a>install dosbox in your system
+    </h2>
+    <p class="has-line-data" data-line-start="2" data-line-end="3">
+      use your own package manager command with sudo privilige to install dosbox
+      like:
+    </p>
+    <div class="container">
+      <p class="code" data-line-start="4" data-line-end="5">
+        <strong>sudo zypper in dosbox</strong>
+      </p>
+    </div>
+    <p class="has-line-data" data-line-start="6" data-line-end="7">
+      while <strong>sudo</strong> ask for sudo privilige which is required in
+      most of the occasions. <strong>zypper</strong> is the package manager name
+      for openSUSE(a linux version made by German). <strong>in</strong> means
+      install for zypper and <strong>dosbox</strong> is the package name. Notice
+      sometimes the package name is different from its usual software name so
+      the best way before the installation of a package is to search the
+      software’s package name in different distributions. You can search it in
+      any engines you like or use command like this:
+    </p>
+    <p class="container" data-line-start="8" data-line-end="9">
+      <strong class="code">sudo zypper search dosbox</strong>
+    </p>
+    <p class="has-line-data" data-line-start="10" data-line-end="11">
+      It returns a chart including all packages whose name includes dosbox such
+      as dosbox-sid and uninsdosboxoio-siodi.
+    </p>
+    <h2 class="code-line" data-line-start="12" data-line-end="13">
+      <a id="run_dosbox_in_your_directory_12"></a>run dosbox in your directory
+    </h2>
+    <p class="has-line-data" data-line-start="13" data-line-end="14">
+      You could run dosbox by clicking its icon in the search bar or application
+      bar but more efficiently you could directly type
+      <strong>dosbox</strong> in the bash and the window will show up. Focus on
+      the dosbox’s command line, it may start with <strong>Z:&gt;</strong>, or
+      anything else. You may need to redirect the directory to somewhere on your
+      computer to make dosbox be able to use files you made. Command is :
+    </p>
+    <p class="container" data-line-start="15" data-line-end="16">
+      <strong class="code">mount c ~/pathOne/pathTwo</strong>
+    </p>
+    <p class="has-line-data" data-line-start="17" data-line-end="18">
+      Here c is the symbol. Best choice is c.
+      <a style="font-family: mono_andale">~/pathOne/pathTwo</a> is the directory
+      name. Here ~ represents /home/yourUserName. You could input absolute path
+      too which is recommended.
+    </p>
+    <p class="has-line-data" data-line-start="19" data-line-end="20">
+      To use a new shell system, first type Help or HELP or anything else to ask
+      for directions. You could learn some basic use in dosbox through doing so
+      like dir to list all files and directories and cd to switch directories.
+      Or you could search mannual or tutorials online for help.
+    </p>
+    <p class="has-line-data" data-line-start="21" data-line-end="22">
+      Now if you input the command above (<strong
+        style="font-family: mono_andale"
+        >mount c ~/pathOne/pathTwo</strong
+      >) , you see nothing happened, if its
+      <strong style="font-family: mono_andale">Z:&gt;</strong> before, it still
+      didnt change. Du~de, we need one more step. Remember we use
+      <strong style="font-family: mono_andale">c</strong> after mount. We may
+      type command below in the dosbox shell:
+    </p>
+    <p class="container" data-line-start="23" data-line-end="24">
+      <strong class="code">c:</strong>
+    </p>
+    <p class="has-line-data" data-line-start="25" data-line-end="26">
+      and after this you would see the letter finally changed. dir it and you
+      could see the files in your input directory be listed below.
+    </p>
+    <h2 class="code-line" data-line-start="27" data-line-end="28">
+      <a id="excute_exe_in_dosbox_27"></a>excute exe in dosbox
+    </h2>
+    <p class="has-line-data" data-line-start="28" data-line-end="29">
+      Dosbox actually is a simulator for a specific environment which means the
+      dosbox file system could be very different from your linux file system.
+      For example .exe file can’t directly be executed in linux while it can be
+      done in dosbox.
+    </p>
+    <p class="has-line-data" data-line-start="30" data-line-end="31">
+      We did set a path on our computer for dosbox to use earlier. The directory
+      we set for dosbox is a platform where dosbox can read files and do its own
+      stuff. Since .exe files can’t be excuted by linux but can be executed in
+      dosbox, we put .exe files in the directory we set for dosbox. And type the
+      name of the .exe file, we can see it be run or executed in dosbox.
+    </p>
+    <h2 class="code-line" data-line-start="32" data-line-end="33">
+      <a id="assembeler_tools_32"></a>assembeler tools
+    </h2>
+    <p class="has-line-data" data-line-start="33" data-line-end="34">
+      But we need dosbox just for enviroment simulation. What should we do if we
+      need to assemble .asm files?
+    </p>
+    <p class="has-line-data" data-line-start="35" data-line-end="36">
+      Well you could use nasm in linux which is recommended. Just install nasm
+      using command we use to install dosbox above, don’t need to search, the
+      package name is nasm itself.
+    </p>
+    <p class="has-line-data" data-line-start="37" data-line-end="38">
+      But some people would still need masm. If we need to assemble .asm in
+      Intel 80 86 chips (8086,8088,80286,80386,80486 and pentium. These chips
+      have some differences on the CPU registers’ bits number and names. Further
+      information may require an assembly language tutorial book) environment,
+      we need masm to do this step.
+    </p>
+    <p class="has-line-data" data-line-start="39" data-line-end="40">
+      What’s masm? masm is a .exe file with a full name Microsoft Macro
+      Assembler from where we can see why it’s .exe file. How to use masm in
+      linux? Like what we analyzed, we need to move masm.exe in the directory we
+      set for dosbox, type masm and let dosbox execute the masm.exe file.
+    </p>
+    <p class="has-line-data" data-line-start="41" data-line-end="42">
+      Well we did it! One more stuff is that assembling .asm files not only
+      needs masm, but also needs many other tools which are all .exe files. We
+      obey the same way we do for masm.exe. And the directory we set for dosbox
+      can now be called as an assemble enviroment. If we wanna do any assembling
+      work, make .asm files in pure text format in that directory and use
+      tools(masm and etc) in the dosbox shell, we will get the result. The
+      normal procedure to use these tools are: masm fileName, link fileName,
+      fileName.
+    </p>
+    <p class="has-line-data" data-line-start="43" data-line-end="44">
+      For example we created and wrote sample.asm in the directory we set for
+      dosbox. Now we do:
+    </p>
+    <p class="container" data-line-start="45" data-line-end="46">
+      <strong class="code">masm sample;</strong> make sample.obj file
+    </p>
+    <p class="container" data-line-start="47" data-line-end="48">
+      <strong class="code">link sample;</strong> make sample.exe file through
+      sample.obj
+    </p>
+    <p class="container" data-line-start="49" data-line-end="50">
+      <strong class="code">sample</strong> execute sample.exe like execute
+      masm.exe by just typing masm
+    </p>
+    <p class="has-line-data" data-line-start="51" data-line-end="52">
+      We will see the result be displayed on the dosbox (0,0,0) screen with
+      (255,255,255) frontface color. Notice ; at the end of masm and link
+      command means jumping all other questions.
+    </p>
+    <h2 class="code-line" data-line-start="53" data-line-end="54">
+      <a id="masm_and_other_tools_file_53"></a>masm and other tools file
+    </h2>
+    <p class="has-line-data" data-line-start="54" data-line-end="55">
+      Well now we need only the tools’ files, of course .exe type. You can
+      download them online using all the ways. Here are these tools provided in
+      the
+      <a href="../index.html" class="tooltip"
+        >tools<span class="tooltiptext">Currently Not Supported</span></a
+      >
+      folder.
+    </p>
   </body>
 </html>
